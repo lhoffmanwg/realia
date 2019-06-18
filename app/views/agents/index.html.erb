@@ -1,0 +1,9 @@
+<h2>Agents</h2>
+
+
+<% @agents.each do |agent| %>
+  <p><%= link_to agent.user.first_name + " " + agent.user.last_name, agent_path(agent) %></p>
+<%end%>
+
+<!--render edit button-->
+<%= button_to "Add Agent", { :action => "new" }, :method => :get %>

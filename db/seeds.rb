@@ -1,0 +1,37 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(first_name:"Kevin", last_name:"Hathaway", email:"kevin@gmail.com", phone:2065551212)
+User.create(first_name:"Linda", last_name:"Smith", email:"laura@gmail.com", phone:2065551131)
+User.create(first_name:"Sarah", last_name:"Jones", email:"sarah@gmail.com", phone:2065559898)
+User.create(first_name:"Tyler", last_name:"Rocks", email:"tyler@gmail.com", phone:2065551134)
+User.create(first_name:"Spock", last_name:"Ears", email:"spock@gmail.com", phone:2065551135)
+User.create(first_name:"Kirk", last_name:"Captain", email:"kirk@gmail.com", phone:2065551136)
+User.create(first_name:"Elaine", last_name:"Johnson", email:"elaine@gmail.com", phone:2065551140)
+
+Listing.create(price:1300000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
+Listing.create(price:100000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
+Listing.create(price:300000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
+Listing.create(price:5300000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
+Listing.create(price:200000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
+
+
+Favorite.create(listing_id:1, user_id:1,rating:5)
+Favorite.create(listing_id:1, user_id:1,rating:4)
+
+Buyer.create(user_id:1, budget:300000, bedrooms:3, bathrooms:2)
+Buyer.create(user_id:1, budget:100000, bedrooms:3, bathrooms:2)
+
+
+Agent.create(user_id:1, agency:"The Agency", years_exp:7)
+Agent.create(user_id:2, agency:"John L.Scott", years_exp:10)
+Agent.create(user_id:3, agency:"The Agency", years_exp:1)
+Agent.create(user_id:4, agency:"Windemere", years_exp:4)
+Agent.create(user_id:5, agency:"Windemere", years_exp:8)
+Agent.create(user_id:6, agency:"The Agency", years_exp:17)
+Agent.create(user_id:7, agency:"My Agency", years_exp:27)
