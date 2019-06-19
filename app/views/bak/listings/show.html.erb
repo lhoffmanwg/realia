@@ -13,33 +13,14 @@
 
   <h4> About: <%= @listing.description %>
 
-  <h4> Date Listed: <%= @listing.date_listed %>
 
-  <h4> Date Sold: <%= @listing.date_sold %>
+    <!-- <p><label>Date Listed:</label> -->
+    <%#= f.text_field :date_listed %></p>
+
+    <!-- <p><label>Date Sold:</label> -->
+    <%#= f.text_field :date_sold %></p>
 
   <h4> Days on Market: have to wait until get the dates figured out</h4>
-
-  <%= form_for "@listing" do |form| %>
-#########
-  <p><%= f.check_box(:twitter_share) %>
-  <%= f.label(:twitter_share, "Favorite") %></p>
-  <!--<p><label>Favorite: </label>-->
-    <%= f.collection_select :user_id, User.all, :id, :first_name%>
-
-
-
-
-
-
-
-
-  <% end %>
-
-
-
-  <!--<p><label>Favorite:</label>-->
-
-
 
   <!--render delete button-->
   <p><%= form_for(@listing, :html => { :method => :delete, :remote => true }) do |f| %>

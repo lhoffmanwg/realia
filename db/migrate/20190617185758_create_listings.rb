@@ -12,7 +12,6 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.datetime :date_listed
       t.datetime :date_sold
       t.string :house_pic
-      t.integer :buyer_id
       t.integer :agent_id
       t.string :house_pic
 

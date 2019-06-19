@@ -1,0 +1,9 @@
+<h2>Listings</h2>
+
+
+<% @listings.each do |listing| %>
+  <p><%= link_to listing.title, listing_path(listing) %></p>
+<%end%>
+
+<!--render edit button-->
+<%= button_to "Add Listing", { :action => "new" }, :method => :get %>

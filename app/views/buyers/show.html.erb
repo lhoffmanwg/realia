@@ -1,0 +1,24 @@
+
+<h2>Buyer Details</h2>
+
+  <h3>Buyer: <%= @buyer.name %></h3>
+
+  <h3>Email: <%= @buyer.email %>
+
+  <h3>Phone: <%= @buyer.phone %>
+
+<h2>Requirements
+
+  <h3>Budget: <%= @buyer.budget%>
+
+  <h3>Number of Bedrooms: <%= @buyer.bedrooms %>
+
+  <h3>Number of Bathrooms: <%= @buyer.bathrooms %>
+
+  <!--render delete button-->
+  <p><%= form_for(@buyer, :html => { :method => :delete, :remote => true }) do |f| %>
+    <%= f.submit :value => "Delete" %>
+  <%end%></p>
+
+  <!--render edit button-->
+  <%= button_to "Edit", { :action => "edit" }, :method => :get %>

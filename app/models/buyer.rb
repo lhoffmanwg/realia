@@ -1,5 +1,5 @@
 class Buyer < ApplicationRecord
-  #has_many :listings, through: :favorites
-  belongs_to :user
-  
+  has_many :listings, through: :favorites
+  has_many :favorites
+
 end

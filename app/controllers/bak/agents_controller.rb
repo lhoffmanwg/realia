@@ -18,18 +18,24 @@ class AgentsController < ApplicationController
 
   def update
     @agent = Agent.find(params[:id])
-    @agent.update(agent_params)
+    @phone = @agent.user.phone
+    @agent.update(params.require(:agent).permit(:agency, :years_exp, :phone))
     redirect_to agent_path(@agent)
   end
 
   def create
+
     @agent = Agent.new(agent_params)
+    # @agent.agency = params[:agent][:agency]
+    # @agent.years_exp = params[:agent][:years_exp]
     @agent.save
+    # byebug
     redirect_to agent_path(@agent)
   end
 
   def destroy
     @agent = Agent.find(params[:id])
+    @agent.user.destroy
     @agent.destroy
     redirect_to action: "index"
   end
@@ -37,7 +43,7 @@ class AgentsController < ApplicationController
   private
 
   def agent_params
-    params.require(:agent).permit(:name, :agency, :years_exp, :email, :phone)
+    params.require(:agent).permit(:agency, :years_exp, :user_id)
   end
 
 end

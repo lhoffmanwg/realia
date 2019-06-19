@@ -1,0 +1,30 @@
+
+<h2>Add a New Agent</h2>
+
+
+<%= form_for(@agent) do |f| %>
+  <p><label>First Name:</label>
+  <%#= f.text_field :@agent.user.first_name %></p>
+  <%#= f.text_field :agent.user.first_name %></p>
+
+  <p><label>Last Name:</label>
+  <%#= f.text_field :@agent.user.last_name %></p>
+
+  <p><label>Agency:</label>
+  <%= f.text_field :agency %></p>
+
+  <p><label>Years of Experience:</label>
+  <%= f.text_field :years_exp %></p>
+
+  <p><label>User</label>
+    <%= f.collection_select :user_id, User.all, :id, :first_name%>
+
+  <label>Email:</label><br>
+  <%#= f.text_field :@agent.user.email %>
+
+  <label>Phone:</label><br>
+  <%#= f.text_field :phone  %>
+
+
+  <%= f.submit %>
+<% end %>

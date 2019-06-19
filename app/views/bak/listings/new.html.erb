@@ -16,7 +16,7 @@
   <%= f.text_field :house_number %></p>
 
   <p><label>Street:</label><br>
-  <%= f.text_field :street %>
+  <%= f.text_field :@listing.street %>
 
   <p><label>City:</label>
   <%= f.text_field :city %>
@@ -27,14 +27,14 @@
   <p><label>Zip:</label>
   <%= f.text_field :zip %>
 
-  <p><label>List Date:</label>
-  <%= f.date_field :date_listed %>
+  <!--<p><label>List Date:</label>-->
+  <%#= f.text_field :list_date %>
 
   <p><label>Add Image:</label>
-  <%= f.text_field :house_pic %>
+  <%= f.text_field :city %>
 
   <p><label>Description:</label>
-  <%= f.text_area :description %>
+  <%= f.text_area :city %>
 
   <%= f.submit %>
 

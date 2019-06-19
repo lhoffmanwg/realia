@@ -1,0 +1,9 @@
+<h2>Buyers</h2>
+
+
+<% @buyers.each do |buyer| %>
+  <p><%= link_to buyer.name, buyer_path(buyer) %></p>
+<%end%>
+
+<!--render edit button-->
+<%= button_to "Add Buyer", { :action => "new" }, :method => :get %>
