@@ -5,8 +5,8 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.integer :price
       t.string :title
       t.string :description
-      t.date :date_listed
-      t.date :date_sold
+      t.datetime :date_listed
+      t.datetime :date_sold
       t.integer :agent_id
 
       t.timestamps

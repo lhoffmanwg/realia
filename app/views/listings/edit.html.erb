@@ -1,0 +1,38 @@
+
+<h2>Edit Listings Details</h2>
+
+<%= form_for(@listing) do |f| %>
+
+    <p><label>Title:</label>
+    <%= f.text_field :title %></p>
+
+    <p><label>Price:</label>
+    <%= f.number_field :price %></p>
+
+    <p><label>House Number:</label>
+    <%= f.text_field :house_number %></p>
+
+    <p><label>Street:</label>
+    <%= f.text_field :street %></p>
+
+    <p><label>State:</label>
+    <%= f.text_field :state %></p>
+
+    <p><label>Zip:</label>
+    <%= f.text_field :zip %></p>
+
+    <!-- <p><label>Date Listed:</label> -->
+    <%#= f.text_field :date_listed %></p>
+
+    <!-- <p><label>Date Sold:</label> -->
+    <%#= f.text_field :date_sold %></p>
+
+    <p><label>Descrption:</label>
+    <%= f.text_area :description %></p>
+
+    <%= f.submit %>
+
+<% end %>
+<%# #t.integer "agent_id"
+#t.string "house_pic"
+#t.integer "user_id"  %>

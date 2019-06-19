@@ -1,0 +1,31 @@
+
+<h2>Listing Details</h2>
+
+  <div><img src="<#%= @listing.house_pic %>"></img></div>
+  <img src="<%#= https://www.dropbox.com/home/pics?preview=bungalo1.jpg %>"></img>
+
+
+  <h3> <%= @listing.title %> <h3>
+
+  <h3> Price: <%= @listing.price %> </h3>
+
+  <h3> Address: <%= @listing.house_number %> <%= @listing.street %> <%= @listing.city %> <%= @listing.state %><%= @listing.zip %>
+
+  <h4> About: <%= @listing.description %>
+
+
+    <!-- <p><label>Date Listed:</label> -->
+    <%#= f.text_field :date_listed %></p>
+
+    <!-- <p><label>Date Sold:</label> -->
+    <%#= f.text_field :date_sold %></p>
+
+  <h4> Days on Market: have to wait until get the dates figured out</h4>
+
+  <!--render delete button-->
+  <p><%= form_for(@listing, :html => { :method => :delete, :remote => true }) do |f| %>
+    <%= f.submit :value => "Delete" %>
+  <%end%></p>
+
+  <!--render edit button-->
+  <%= button_to "Edit", { :action => "edit" }, :method => :get %>

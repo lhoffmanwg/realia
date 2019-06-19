@@ -1,25 +1,31 @@
 
 <h2>Edit Agent Details</h2>
 
-
 <%= form_for(@agent) do |f| %>
-  <p><label>First Name:</label>
-  <%#= f.text_field :agent.user.first_name %></p>
 
-  <p><label>Last Name:</label>
-  <%#= f.text_field :@agent.user.last_name %></p>
+    <p><label>Agency:</label>
+    <%= f.text_field :agency %></p>
 
-  <p><label>Agency:</label>
-  <%= f.text_field :agency %></p>
+    <p><label>Years of Experience:</label>
+    <%= f.text_field :years_exp %></p>
 
-  <p><label>Years of Experience:</label>
-  <%= f.text_field :years_exp %></p>
 
-  <p><label>Email:</label></p>
-  <%#= f.text_field :@agent.user.email %>
+  <%= f.fields_for @agent.user do |u| %>
 
-  <p><label>Phone:</label></p>
-  <%= f.text_field :agent.user.phone  %>
+      <p><label>First Name:</label>
+      <%= u.text_field :first_name %></p>
 
-  <%= f.submit %>
+      <p><label>Last Name:</label>
+      <%= u.text_field :last_name %></p>
+
+      <p><label>Email:</label></p>
+      <%= u.email_field :email %>
+
+      <p><label>Phone:</label></p>
+      <%= u.text_field :phone  %>
+
+    <% end %>
+
+    <%= f.submit %>
+    
 <% end %>

@@ -14,11 +14,11 @@ User.create(first_name:"Spock", last_name:"Ears", email:"spock@gmail.com", phone
 User.create(first_name:"Kirk", last_name:"Captain", email:"kirk@gmail.com", phone:2065551136)
 User.create(first_name:"Elaine", last_name:"Johnson", email:"elaine@gmail.com", phone:2065551140)
 
-Listing.create(price:1300000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
-Listing.create(price:100000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
-Listing.create(price:300000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
-Listing.create(price:5300000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
-Listing.create(price:200000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
+Listing.create(price:1300000, title:"1930's Spanish Bungalo", description:"Descriptive Words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder", user_id:3)
+Listing.create(price:100000, title:"Mid-century Modern", description:"Descriptive Words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder", user_id:1)
+Listing.create(price:300000, title:"Handyperson's Special", description:"Descriptive Words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder", user_id:2)
+#Listing.create(price:5300000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
+#Listing.create(price:200000, title:"1930's Spanish Bungalo", description:"Lot's of words", agent_id:3, house_number:"824", street:"Riverside Drive", city:"San Jose", state:"CA", zip:95125, house_pic:"placeholder")
 
 
 Favorite.create(listing_id:1, user_id:1,rating:5)

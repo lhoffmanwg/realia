@@ -24,17 +24,26 @@ class AgentsController < ApplicationController
   end
 
   def create
-    @agent = Agent.new
-    @agent.agency = params[:agent][:agency]
-    @agent.years_exp = params[:agent][:years_exp]
+
+    @agent = Agent.new(agent_params)
+    # @agent.agency = params[:agent][:agency]
+    # @agent.years_exp = params[:agent][:years_exp]
     @agent.save
+    # byebug
     redirect_to agent_path(@agent)
   end
 
   def destroy
     @agent = Agent.find(params[:id])
+    @agent.user.destroy
     @agent.destroy
     redirect_to action: "index"
+  end
+
+  private
+
+  def agent_params
+    params.require(:agent).permit(:agency, :years_exp, :user_id)
   end
 
 end

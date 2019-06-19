@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_001443) do
+ActiveRecord::Schema.define(version: 2019_06_18_215850) do
 
   create_table "agents", force: :cascade do |t|
     t.integer "user_id"
@@ -41,8 +41,6 @@ ActiveRecord::Schema.define(version: 2019_06_18_001443) do
     t.integer "price"
     t.string "title"
     t.string "description"
-    t.date "date_listed"
-    t.date "date_sold"
     t.integer "agent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
