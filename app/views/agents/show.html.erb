@@ -3,7 +3,7 @@
 
   <h3>Agent: <%= @agent.name %></h3>
 
-  <h3>Agency: <%= @agent.agency %>
+  <!-- <h3>Agency: <%#= @agency.agency_name %> -->
 
   <h3>Years of Experience: <%= @agent.years_exp %>
 
@@ -16,7 +16,7 @@
   <h3>My Listings:<h3>
 
     <% @agent.listings.each do |listing| %>
-      <!-- <p><%= link_to agent.listing.agent_id, agent_path(agent) %></p> -->
+       <p><%= link_to("#{listing.title}", listing_path) %></p>
     <%end%>
 
   <!--render delete button-->

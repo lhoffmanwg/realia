@@ -1,7 +1,13 @@
 class FavoritesController < ApplicationController
 
   def create
-    #byebug
+    @favorite = Favorite.new(favorite_params)
+
+    #@favorite.listing_id
+
+    @favorite.save
+    #redirect_to listing_path(@listing)
+    byebug
   end
 
   private

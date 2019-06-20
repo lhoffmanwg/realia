@@ -4,7 +4,8 @@
 <% @listings.each do |listing| %>
   <p><%#= link_to listing.title, listing_path(listing) %></p>
     <p><%#= link_to listing.title + ", " + listing.price.to_s, listing_path(listing) %></p>
-    <p><%= link_to listing.price.to_s + ", " + listing.title, listing_path(listing) %></p>
+    <p><%#= link_to listing.price.to_s + ", " + listing.title, listing_path(listing) %></p>
+    <p><%= link_to listing.title + ", " + number_to_currency(listing.price), listing_path(listing) %></p>
 
 <%end%>
 

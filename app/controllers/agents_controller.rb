@@ -24,8 +24,11 @@ class AgentsController < ApplicationController
 
   def create
     @agent = Agent.new(agent_params)
-    @agent.save
-    redirect_to agent_path(@agent)
+    if @agent.save
+      redirect_to agents_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -37,7 +40,7 @@ class AgentsController < ApplicationController
   private
 
   def agent_params
-    params.require(:agent).permit(:name, :agency, :years_exp, :email, :phone)
+    params.require(:agent).permit(:name, :agency_id, :years_exp, :email, :phone)
   end
 
 end

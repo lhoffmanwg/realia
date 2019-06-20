@@ -1,15 +1,9 @@
 
 <h2>Agency Details</h2>
 
-  <h3>Agent: <%= @agency.name %></h3>
+  <h3>Agency: <%= @agency.agency_name %></h3>
 
   <h3>Year Founded: <%= @agency.year_founded %>
-
-  <h2>Contact
-
-  <h3>Phone: <%= @agency.phone %>
-
-  <h3>Email: <%= @agency.email %>
 
   <!--render delete button-->
   <p><%= form_for(@agency, :html => { :method => :delete, :remote => true }) do |f| %>
@@ -17,6 +11,15 @@
   <%end%></p>
 
   <!--render edit button-->
-  <%= button_to "Edit", { :action => "edit" }, :method => :get %>
+  <p><%= button_to "Edit", { :action => "edit" }, :method => :get %></p>
 
   <!-- Show all agents at this agency %> -->
+
+  <p><% @agents.each do |agent| %>
+     <%= link_to agent.name, agent_path(agent) %></p>
+  <%end%>
+
+  <%#= button_to "Add Agent", { :action => "agents/new" }, :method => :get %>
+
+  <%#= button_to "Add Agent", { :action => new_agent_path }, :method => :get %>
+  <%= link_to("Add Agent", new_agent_path) %>

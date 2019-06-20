@@ -5,7 +5,7 @@
 
   <h3> <%= @listing.title %> <h3>
 
-  <h3> Price: <%= @listing.price %> </h3>
+  <h3> Price: <%= number_to_currency(@listing.price) %> </h3>
 
   <h3> Address: <%= @listing.house_number %> <%= @listing.street %> <%= @listing.city %> <%= @listing.state %><%= @listing.zip %> <h3>
 
@@ -21,12 +21,12 @@
 
 <%= form_for(@favorite) do |f| %>
 
-<p><label>Add this House to your Favorites?</label>
+<!--Add this House to your Favorites -->
 
   <%= f.hidden_field :listing_id, value: @listing.id %>
   <%# <%= f.hidden_field :user_id, value: session[:user_id] %> %>
 
-    <%= f.submit %>
+    <%= f.submit "Add to Favorites"%>
 <% end %>
 
 <h4> add to favorites </h4>

@@ -23,8 +23,13 @@ class BuyersController < ApplicationController
   end
 
   def create
-    @buyer = Buyer.new(buyer_params)
+    @buyer = Buyer.create(buyer_params)
     @buyer.save
+
+
+    # @buyer = Buyer.create(username: params[:user][:username])
+    #session[:buyer_id] = @buyer.id
+
     redirect_to buyer_path(@buyer)
   end
 

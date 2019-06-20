@@ -39,3 +39,5 @@ Favorite.create(listing_id:3, buyer_id:3, rating:5)
 Favorite.create(listing_id:1, buyer_id:4, rating:4)
 Favorite.create(listing_id:2, buyer_id:1, rating:5)
 Favorite.create(listing_id:3, buyer_id:1, rating:4)
+
+User.create(user_name:"Happy Gilmore")

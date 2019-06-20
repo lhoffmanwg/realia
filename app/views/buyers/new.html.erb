@@ -7,20 +7,20 @@
   <%= f.text_field :name %></p>
 
   <p><label>Email:</label>
-  <%= f.text_field :email %></p>
+  <%= f.email_field :email %></p>
 
   <p><label>Phone:</label>
-  <%= f.text_field :phone %></p>``
+  <%= f.text_field :phone %></p>
 
   <p><label>Budget:</label>
-  <%= f.number_field :phone %></p>``
+  <%= f.number_field :budget %></p>
     <%#= f.collection_select :user_id, User.all, :id, :first_name%>
 
-  <label>Number of Bedrooms:</label><br>
-  <%= f.number_field :bedrooms %>
+  <p><label>Number of Bedrooms:</label>
+  <%= f.number_field :bedrooms %></p>
 
-  <label>Number of Bathrooms:</label><br>
-  <%= f.number_field :bathrooms  %>
+  <p><label>Number of Bathrooms:</label>
+  <%= f.number_field :bathrooms  %></p>
 
   <%= f.submit %>
 <% end %>
