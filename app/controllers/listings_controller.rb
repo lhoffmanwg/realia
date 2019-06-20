@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
     end
 
     def show
+      @favorite = Favorite.new
       @listing = Listing.find(params[:id])
     end
 
@@ -25,7 +26,7 @@ class ListingsController < ApplicationController
     def create
       @listing = Listing.new(listing_params)
       @listing.save
-      #redirect_to listing_path(@listing)
+      redirect_to listing_path(@listing)
     end
 
     def destroy
@@ -37,7 +38,7 @@ class ListingsController < ApplicationController
 private
 
     def listing_params
-      params.require(:listing).permit(:price, :title, :description, :agent_id, :house_number, :street, :city, :state, :zip, :date_listed, :house_pic)
+      params.require(:listing).permit(:price, :title, :description, :agent_id, :house_number, :street, :city, :state, :zip, :date_sold, :date_listed, :house_pic)
     end
 
 end

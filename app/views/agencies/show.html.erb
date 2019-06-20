@@ -1,0 +1,22 @@
+
+<h2>Agency Details</h2>
+
+  <h3>Agent: <%= @agency.name %></h3>
+
+  <h3>Year Founded: <%= @agency.year_founded %>
+
+  <h2>Contact
+
+  <h3>Phone: <%= @agency.phone %>
+
+  <h3>Email: <%= @agency.email %>
+
+  <!--render delete button-->
+  <p><%= form_for(@agency, :html => { :method => :delete, :remote => true }) do |f| %>
+    <%= f.submit :value => "Delete" %>
+  <%end%></p>
+
+  <!--render edit button-->
+  <%= button_to "Edit", { :action => "edit" }, :method => :get %>
+
+  <!-- Show all agents at this agency %> -->

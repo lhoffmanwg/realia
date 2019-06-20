@@ -13,6 +13,12 @@
 
   <h3>Email: <%= @agent.email %>
 
+  <h3>My Listings:<h3>
+
+    <% @agent.listings.each do |listing| %>
+      <!-- <p><%= link_to agent.listing.agent_id, agent_path(agent) %></p> -->
+    <%end%>
+
   <!--render delete button-->
   <p><%= form_for(@agent, :html => { :method => :delete, :remote => true }) do |f| %>
     <%= f.submit :value => "Delete" %>

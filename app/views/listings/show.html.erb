@@ -1,32 +1,46 @@
 
 <h2>Listing Details</h2>
 
-
-<!-- <img src="http://pngimg.com/uploads/cat/cat_PNG50497.png" alt="Girl in a jacket"> -->
-<!-- <div><img src= "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1"></img></div> -->
-<!-- <img src="./bungalo1.jpg"> -->
-<div><img src="<%= @listing.house_pic %>"></img></div>
-<!-- <div><img src="https://photos.zillowstatic.com/cc_ft_1536/ISifv57uv3js720000000000.webp"></img></div> -->
-
-
-<!--"https://s-i.huffpost.com/gen/2028878/images/n-UPROXX-628x314.jpg"-->
+  <div><img src="<%= @listing.house_pic %>"></img></div>
 
   <h3> <%= @listing.title %> <h3>
 
   <h3> Price: <%= @listing.price %> </h3>
 
-  <h3> Address: <%= @listing.house_number %> <%= @listing.street %> <%= @listing.city %> <%= @listing.state %><%= @listing.zip %>
+  <h3> Address: <%= @listing.house_number %> <%= @listing.street %> <%= @listing.city %> <%= @listing.state %><%= @listing.zip %> <h3>
 
-  <h4> About: <%= @listing.description %>
+  <h4> About: <%= @listing.description %> <h4>
 
-  <h4> Date Listed: <%= @listing.date_listed %>
+  <h4> Date Listed: <%= @listing.date_listed.strftime("%m/%d/%Y") %> <h4>
 
-  <h4> Date Sold: <%= @listing.date_sold %>
+  <h4> Date Sold: <%= @listing.date_sold ? @listing.date_sold.strftime("%m/%d/%Y") : "This listing has not sold." %> <h4>
 
-  <h4> Days on Market: have to wait until get the dates figured out</h4>
+  <h4> Days on Market: <%= @listing.days_on_market.count %> <h4>
 
-<!--<p><label>Favorite:</label>-->
+<!--Data for Favorites table-->
 
+<%= form_for(@favorite) do |f| %>
+
+<p><label>Add this House to your Favorites?</label>
+
+  <%= f.hidden_field :listing_id, value: @listing.id %>
+  <%# <%= f.hidden_field :user_id, value: session[:user_id] %> %>
+
+    <%= f.submit %>
+<% end %>
+
+<h4> add to favorites </h4>
+
+<%# <%= form_for(@agent) do |f| %>
+
+<!-- <p><label>User</label> -->
+  <%# <%= f.collection_select :user_id, User.all, :id, :first_name%> %> %>
+
+    <%# <%= f.fields_for @listing.favorites do |u| %>
+        <!-- <p><label>Rate this House:</label> -->
+        <%# <%= u.number_field :rating %></p> %>
+    <%# <% end %> %>
+      <%# <%= f.submit %> %> %>
 
 
 

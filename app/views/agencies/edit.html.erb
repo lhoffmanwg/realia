@@ -1,0 +1,19 @@
+
+<h2>Edit Agency Details</h2>
+
+<%= form_for(@agency) do |f| %>
+
+    <p><label>Agency Name:</label>
+    <%= f.text_field :agency_name %></p>
+
+    <p><label>Year Founded:</label>
+    <%= f.text_field :years_exp %></p>
+
+    <p><label>Agent Name:</label>
+    <%= f.text_field :agent_name %></p>
+
+    <%= f.submit %>
+
+    <%= button_to "Add New Agent", { :action => "new" }, :method => :get %>
+
+<% end %>
