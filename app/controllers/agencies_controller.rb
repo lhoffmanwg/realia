@@ -1,5 +1,7 @@
 class AgenciesController < ApplicationController
 
+  before_action :require_login
+
   def index
     @agencies = Agency.all
   end
@@ -8,7 +10,7 @@ class AgenciesController < ApplicationController
     @agents = Agent.all
     #@listings = Listing.all
     @agency = Agency.find(params[:id])
-    #byebug
+    # byebug
   end
 
   def edit

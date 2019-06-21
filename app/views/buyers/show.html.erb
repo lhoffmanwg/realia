@@ -24,8 +24,11 @@
   <%= button_to "Edit", { :action => "edit" }, :method => :get %>
 
   <!--show all of my favs-->
+
+<%# link_to("favorite", new_favorite_path(listing_id: @listing.id, buyer: current_buyer)) %>
+
   <% @favorites.each do |favorite| %>
-     <% if @buyer.id == favorite.buyer_id %>
-    <h4><%= listing.id.name, listing_path(listing) %></h4>
+     <% if favorite.buyer_id == @buyer.id  %>
+    <h4><%= link_to favorite.listing.title, listing_path(favorite.listing) %></h4>
       <%end%>
   <%end%>

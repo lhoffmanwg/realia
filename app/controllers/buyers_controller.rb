@@ -1,12 +1,16 @@
 class BuyersController < ApplicationController
 
+  before_action :require_login
+
   def index
     @buyers = Buyer.all
   end
 
   def show
+    @favorites = Favorite.all
+    @listings = Listing.all
     @buyer = Buyer.find(params[:id])
-    byebug
+    # byebug
   end
 
   def edit

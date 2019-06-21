@@ -21,6 +21,11 @@
       <%end%>
     <%end%>
 
+  <h3>Total: <%=@agent.number_of_listings%>
+  <!-- <h3>Total for sale: <%#=@agent.number_of_listings%>  -->
+  <!-- <h3>Average days until sold: <%#=@agent.avg_market_days%> -->
+
+
   <!--render delete button-->
   <p><%= form_for(@agent, :html => { :method => :delete, :remote => true }) do |f| %>
     <%= f.submit :value => "Delete" %>
@@ -28,4 +33,4 @@
 
   <!--render edit button-->
   <%= button_to "Edit", { :action => "edit" }, :method => :get %>
- <h3>"add listing" button here</h3>   
+ <h3>"add listing" button here</h3>

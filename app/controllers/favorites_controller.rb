@@ -1,6 +1,7 @@
 
 class FavoritesController < ApplicationController
 
+  before_action :require_login
   before_action :current_buyer
 
   def new

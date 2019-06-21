@@ -6,5 +6,8 @@
     <p><%= link_to listing.title + ", " + number_to_currency(listing.price), listing_path(listing) %></p>
 <%end%>
 
+
+<h4> Total listings: <%= Listing.total_listings %> <h4>
+
 <!--render edit button-->
 <%= button_to "Add Listing", { :action => "new" }, :method => :get %>
