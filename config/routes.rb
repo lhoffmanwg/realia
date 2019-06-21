@@ -16,5 +16,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'buyers#new'
   post '/signup', to: 'buyers#create'
 
+  get '/listings/:id', to: 'listings#add_to_f', as: 'add_to_favs'
+  post 'listings/:id', to: 'listings#update_f', as: 'update_list'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

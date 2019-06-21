@@ -22,3 +22,10 @@
 
   <!--render edit button-->
   <%= button_to "Edit", { :action => "edit" }, :method => :get %>
+
+  <!--show all of my favs-->
+  <% @favorites.each do |favorite| %>
+     <% if @buyer.id == favorite.buyer_id %>
+    <h4><%= listing.id.name, listing_path(listing) %></h4>
+      <%end%>
+  <%end%>

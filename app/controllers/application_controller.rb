@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :require_login
+    helper_method :require_login, :current_buyer
      def require_login
         unless logged_in?
           flash[:error] = "You must be logged in to access this section"
@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
         end
       end
 
-    helper_method :logged_in?  
     def logged_in?
       !!session[:buyer_id]
     end
@@ -21,6 +20,4 @@ class ApplicationController < ActionController::Base
        end
    end
 
-
-
-  end
+end

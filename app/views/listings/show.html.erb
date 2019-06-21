@@ -17,34 +17,7 @@
 
   <h4> Days on Market: <%= @listing.days_on_market.count %> <h4>
 
-<!--Data for Favorites table-->
-
-<%= form_for(@favorite) do |f| %>
-
-<!--Add this House to your Favorites -->
-
-  <%= f.hidden_field :listing_id, value: @listing.id %>
-  <%# <%= f.hidden_field :user_id, value: session[:user_id] %> %>
-
-    <%= f.submit "Add to Favorites"%>
-<% end %>
-
-<%= link_to("favorite", new_favorite_path(listing_id: @listing.id, buyer: @current_buyer))%>
-
-<h4> add to favorites </h4>
-
-<%# <%= form_for(@agent) do |f| %>
-
-<!-- <p><label>User</label> -->
-  <%# <%= f.collection_select :user_id, User.all, :id, :first_name%> %> %>
-
-    <%# <%= f.fields_for @listing.favorites do |u| %>
-        <!-- <p><label>Rate this House:</label> -->
-        <%# <%= u.number_field :rating %></p> %>
-    <%# <% end %> %>
-      <%# <%= f.submit %> %> %>
-
-
+  <%= link_to("favorite", new_favorite_path(listing_id: @listing.id, buyer: current_buyer))%>
 
   <!--render delete button-->
   <p><%= form_for(@listing, :html => { :method => :delete, :remote => true }) do |f| %>
