@@ -15,8 +15,10 @@
 
   <h3>My Listings:<h3>
 
-    <% @agent.listings.each do |listing| %>
-       <p><%= link_to("#{listing.title}", listing_path) %></p>
+    <% @listings.each do |listing| %>
+      <% if listing.agent_id == @agent.id %>
+          <p><%= link_to listing.title + ", " + number_to_currency(listing.price), listing_path(listing) %></p>
+      <%end%>
     <%end%>
 
   <!--render delete button-->
@@ -26,3 +28,4 @@
 
   <!--render edit button-->
   <%= button_to "Edit", { :action => "edit" }, :method => :get %>
+ <h3>"add listing" button here</h3>   

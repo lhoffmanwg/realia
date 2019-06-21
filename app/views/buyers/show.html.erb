@@ -5,11 +5,11 @@
 
   <h3>Email: <%= @buyer.email %>
 
-  <h3>Phone: <%= @buyer.phone %>
+  <h3>Phone: <%= number_to_phone(@buyer.phone) %>
 
 <h2>Requirements
 
-  <h3>Budget: <%= @buyer.budget%>
+  <h3>Budget: <%= number_to_currency(@buyer.budget)%>
 
   <h3>Number of Bedrooms: <%= @buyer.bedrooms %>
 

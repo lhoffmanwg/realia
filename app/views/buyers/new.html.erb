@@ -3,24 +3,29 @@
 
 
 <%= form_for(@buyer) do |f| %>
-  <p><label>Name:</label>
-  <%= f.text_field :name %></p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-  <p><label>Email:</label>
-  <%= f.email_field :email %></p>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
 
-  <p><label>Phone:</label>
-  <%= f.text_field :phone %></p>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br>
 
-  <p><label>Budget:</label>
-  <%= f.number_field :budget %></p>
-    <%#= f.collection_select :user_id, User.all, :id, :first_name%>
+  <%= f.label :email %>
+  <%= f.email_field :email %><br>
 
-  <p><label>Number of Bedrooms:</label>
-  <%= f.number_field :bedrooms %></p>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %><br>
 
-  <p><label>Number of Bathrooms:</label>
-  <%= f.number_field :bathrooms  %></p>
+  <%= f.label :budget %>
+  <%= f.number_field :budget %><br>
 
-  <%= f.submit %>
+  <%= f.label :number_of_bedrooms %>
+  <%= f.number_field :bedrooms %><br>
+
+  <%= f.label :number_of_bathrooms %>
+  <%= f.number_field :bathrooms  %><br>
+
+<%= f.submit %>
 <% end %>

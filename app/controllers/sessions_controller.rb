@@ -4,11 +4,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(user_name: params[:user_name])
-    #if @user && @user.authenticate(params[:session][:password])
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      byebug
+
+    @buyer = Buyer.find_by(name: params[:name])
+    #if @buyer && @buyer.authenticate(params[:session][:password])
+    if @buyer && @buyer.authenticate(params[:password])
+      session[:buyer_id] = @buyer.id
       redirect_to listings_path
     else
       flash[:message] = "Invalid login."

@@ -5,6 +5,7 @@ class AgentsController < ApplicationController
   end
 
   def show
+    @listings = Listing.all
     @agent = Agent.find(params[:id])
   end
 

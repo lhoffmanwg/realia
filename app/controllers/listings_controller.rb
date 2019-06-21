@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
 
+  before_action :require_login
+
     def index
       @listings = Listing.all
     end

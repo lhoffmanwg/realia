@@ -6,7 +6,9 @@ class AgenciesController < ApplicationController
 
   def show
     @agents = Agent.all
+    #@listings = Listing.all
     @agency = Agency.find(params[:id])
+    #byebug
   end
 
   def edit

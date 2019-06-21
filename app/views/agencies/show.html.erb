@@ -3,7 +3,7 @@
 
   <h3>Agency: <%= @agency.agency_name %></h3>
 
-  <h3>Year Founded: <%= @agency.year_founded %>
+  <h3>Year Founded: <%= @agency.year_founded %></h3>
 
   <!--render delete button-->
   <p><%= form_for(@agency, :html => { :method => :delete, :remote => true }) do |f| %>
@@ -15,11 +15,24 @@
 
   <!-- Show all agents at this agency %> -->
 
-  <p><% @agents.each do |agent| %>
-     <%= link_to agent.name, agent_path(agent) %></p>
+  <h3>Our Agents:</h3>
+
+  <% @agents.each do |agent| %>
+     <% if @agency.id == agent.agency_id %>
+    <h4><%= link_to agent.name, agent_path(agent) %></h4>
+      <%end%>
   <%end%>
 
   <%#= button_to "Add Agent", { :action => "agents/new" }, :method => :get %>
 
   <%#= button_to "Add Agent", { :action => new_agent_path }, :method => :get %>
   <%= link_to("Add Agent", new_agent_path) %>
+
+  <!-- Show all listings at this agency %> -->
+  <h3>Our Listings:</h3>
+
+  <%# <% @listings.each do |listing| %>
+    <%# if @agency.id == agent.agency_id && agent.id == listing.agent_id%>
+        <p><%#= link_to listing.title + ", " + number_to_currency(listing.price), listing_path(listing) %></p>
+    <%#end%>
+  <%#end%> %>

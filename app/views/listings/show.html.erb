@@ -29,6 +29,8 @@
     <%= f.submit "Add to Favorites"%>
 <% end %>
 
+<%= link_to("favorite", new_favorite_path(listing_id: @listing.id, buyer: @current_buyer))%>
+
 <h4> add to favorites </h4>
 
 <%# <%= form_for(@agent) do |f| %>

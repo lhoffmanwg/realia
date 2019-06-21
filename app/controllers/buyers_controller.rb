@@ -24,13 +24,10 @@ class BuyersController < ApplicationController
 
   def create
     @buyer = Buyer.create(buyer_params)
-    @buyer.save
-
-
-    # @buyer = Buyer.create(username: params[:user][:username])
-    #session[:buyer_id] = @buyer.id
-
-    redirect_to buyer_path(@buyer)
+    session[:buyer_id] = @buyer.id
+    redirect_to listings_path
+    # redirect_to buyer_path(@buyer)
+    # @buyer.save
   end
 
   def destroy
@@ -42,7 +39,8 @@ class BuyersController < ApplicationController
   private
 
   def buyer_params
-    params.require(:buyer).permit(:name, :email, :phone, :budget, :bedrooms, :bathrooms)
+    params.require(:buyer).permit(:name, :email, :phone, :budget, :bedrooms, :bathrooms, :password, :password_confirmation)
+    #params.require(:buyer).permit(:name, :password, :password_confirmation)
   end
 
 end
