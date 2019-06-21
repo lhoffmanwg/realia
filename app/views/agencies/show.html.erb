@@ -23,16 +23,14 @@
       <%end%>
   <%end%>
 
-  <%#= button_to "Add Agent", { :action => "agents/new" }, :method => :get %>
-
   <%#= button_to "Add Agent", { :action => new_agent_path }, :method => :get %>
   <%= link_to("Add Agent", new_agent_path) %>
 
   <!-- Show all listings at this agency %> -->
   <h3>Our Listings:</h3>
 
-  <%# <% @listings.each do |listing| %>
-    <%# if @agency.id == agent.agency_id && agent.id == listing.agent_id%>
-        <p><%#= link_to listing.title + ", " + number_to_currency(listing.price), listing_path(listing) %></p>
-    <%#end%>
-  <%#end%> %>
+  <% @agency.agents.each do |agent| %>
+    <% agent.listings.each do |listing| %>
+        <p><%= link_to listing.title + ", " + number_to_currency(listing.price), listing_path(listing) %></p>
+    <% end %>
+    <% end%>
