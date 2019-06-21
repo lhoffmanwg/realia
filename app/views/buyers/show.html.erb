@@ -3,6 +3,8 @@
 
   <h3>Buyer: <%= @buyer.name %></h3>
 
+  <h4>Days in Market: <%= @buyer.how_many_days_looking.count %>
+
   <h3>Email: <%= @buyer.email %>
 
   <h3>Phone: <%= number_to_phone(@buyer.phone) %>
@@ -25,8 +27,7 @@
 
   <!--show all of my favs-->
 
-<%# link_to("favorite", new_favorite_path(listing_id: @listing.id, buyer: current_buyer)) %>
-
+<h3>My Favorites:</h3>
   <% @favorites.each do |favorite| %>
      <% if favorite.buyer_id == @buyer.id  %>
     <h4><%= link_to favorite.listing.title, listing_path(favorite.listing) %></h4>

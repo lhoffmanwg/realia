@@ -15,7 +15,7 @@
 
   <!-- Show all agents at this agency %> -->
 
-  <h3> <%= "Our Agents have an average of #{@agency.average_agent_exp} years experience." %></h3>
+  <h3> <%= "Our Agents have an average of #{@agency.average_agent_exp} years experience. Meet our agents:" %></h3>
 
   <% @agents.each do |agent| %>
      <% if @agency.id == agent.agency_id %>
@@ -33,4 +33,4 @@
     <% agent.listings.each do |listing| %>
         <p><%= link_to listing.title + ", " + number_to_currency(listing.price), listing_path(listing) %></p>
     <% end %>
-    <% end%>
+  <% end%>

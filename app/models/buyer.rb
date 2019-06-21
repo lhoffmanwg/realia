@@ -6,14 +6,16 @@ class Buyer < ApplicationRecord
 
   has_secure_password
 
-  def how_many_favs
+  def self.how_many_favs
+
   end
 
   def sort_my_favs_by_most_faved
   end
 
-  def how_namy_days_looking
-    
+  def how_many_days_looking
+    self.created_at.to_date..Time.now.to_date
+
     #take date buyer_record created, subtract from today
   end
 
